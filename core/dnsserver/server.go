@@ -242,6 +242,7 @@ func (s *Server) ServeDNS(ctx context.Context, w dns.ResponseWriter, r *dns.Msg)
 
 	for {
 		if h, ok := s.zones[q[off:]]; ok {
+			fmt.Println(h.Zone, h.pluginChain.Name())
 			if h.pluginChain == nil { // zone defined, but has not got any plugins
 				errorAndMetricsFunc(s.Addr, w, r, dns.RcodeRefused)
 				return

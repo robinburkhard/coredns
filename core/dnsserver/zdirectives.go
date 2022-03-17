@@ -10,7 +10,6 @@ package dnsserver
 // (after) them during a request, but they must not
 // care what plugin above them are doing.
 var Directives = []string{
-	"rhine",
 	"metadata",
 	"geoip",
 	"cancel",
@@ -50,6 +49,7 @@ var Directives = []string{
 	"k8s_external",
 	"kubernetes",
 	"file",
+	"rhine",
 	"auto",
 	"secondary",
 	"etcd",
